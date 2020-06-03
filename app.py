@@ -67,6 +67,9 @@ def onboarding_message(payload):
     channel = response["channel"]["id"]
 
     # Post the onboarding message.
+    slack_web_client.chat_postMessage(
+        channel='#random',
+        text="Payload received")
     start_onboarding(user_id, channel)
 
 
@@ -148,9 +151,6 @@ def message(payload):
 
 
     if text and text.lower() == "start":
-        slack_web_client.chat_postMessage(
-        channel='#random',
-        text="Payload received")
         return start_onboarding(user_id, channel_id)
 
 
