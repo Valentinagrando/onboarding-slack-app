@@ -63,13 +63,13 @@ def onboarding_message(payload):
     user_id = event.get("user", {}).get("id")
 
     # Open a DM with the new user.
-    response = slack_web_client.im_open(user=user_id)
+    response = slack_web_client.conversations_open(user=user_id)
     channel = response["channel"]["id"]
 
     # Post the onboarding message.
-    slack_web_client.chat_postMessage(
+    response = slack_web_client.chat_postMessage(
         channel=channel,
-        text="Payload received")
+        text="Hello world!")
     start_onboarding(user_id, channel)
 
 
