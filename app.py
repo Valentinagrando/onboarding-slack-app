@@ -6,6 +6,7 @@ from slackeventsapi import SlackEventAdapter
 from onboarding_tutorial import OnboardingTutorial
 import ssl as ssl_lib
 import certifi
+from helper import *
 
 # Initialize a Flask app to host the events adapter
 app = Flask(__name__)
@@ -151,6 +152,7 @@ def message(payload):
 
 
     if text and text.lower() == "start":
+        print("I got here once!")
         return start_onboarding(user_id, channel_id)
 
 

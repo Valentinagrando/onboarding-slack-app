@@ -1,4 +1,5 @@
-#!/Users/vgrando/Documents/SlackPy/env/bin/python3
+#!/Users/vgrando/Documents/SlackPy/env/bin/python
+
 # -*- coding: utf-8 -*-
 import re
 import sys
