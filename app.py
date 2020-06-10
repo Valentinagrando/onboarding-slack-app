@@ -15,17 +15,18 @@ slack_events_adapter = SlackEventAdapter(os.environ['SLACK_SIGNING_SECRET'], "/s
 # Initialize a Web API client
 slack_web_client = WebClient(token=os.environ['SLACK_BOT_TOKEN'])
 
-try:
-    response = slack_web_client.chat_postMessage(
-        channel='#random',
-        text="Hello world!")
-    assert response["message"]["text"] == "Hello world!"
-except SlackApiError as e:
-    # You will get a SlackApiError if "ok" is False
-    assert e.response["ok"] is False
-    assert e.response["error"]  # str like 'invalid_auth', 'channel_not_found'
-    print(f"Got an error: {e.response['error']}")
+# try:
+#     response = slack_web_client.chat_postMessage(
+#         channel='#random',
+#         text="Hello world!")
+#     assert response["message"]["text"] == "Hello world!"
+# except SlackApiError as e:
+#     # You will get a SlackApiError if "ok" is False
+#     assert e.response["ok"] is False
+#     assert e.response["error"]  # str like 'invalid_auth', 'channel_not_found'
+#     print(f"Got an error: {e.response['error']}")
 
+print("St least I started")
 onboarding_tutorials_sent = {}
 
 def start_onboarding(user_id: str, channel: str):
@@ -152,7 +153,7 @@ def message(payload):
 
 
     if text and text.lower() == "start":
-        print("I got here once!")
+        print("I got here!!!!")
         return start_onboarding(user_id, channel_id)
 
 
