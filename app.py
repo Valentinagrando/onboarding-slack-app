@@ -6,7 +6,7 @@ from slackeventsapi import SlackEventAdapter
 from onboarding_tutorial import OnboardingTutorial
 import ssl as ssl_lib
 import certifi
-from helper import *
+# from helper import *
 
 # Initialize a Flask app to host the events adapter
 app = Flask(__name__)
