@@ -145,6 +145,8 @@ def message(payload):
     """Display the onboarding welcome message after receiving a message
     that contains "start".
     """
+    print("I got to message!!!!")
+
     event = payload.get("event", {})
 
     channel_id = event.get("channel")
