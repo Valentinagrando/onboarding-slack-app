@@ -155,7 +155,7 @@ def message(payload):
     print(text)
     print(event)
 
-    if text and text.lower() == "start":
+    if text.contains("start") and text.lower().contains("start"):
         print("I got here!!!!")
         return start_onboarding(user_id, channel_id)
 
