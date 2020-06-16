@@ -56,9 +56,9 @@ class OnboardingTutorial:
             "Important messages and files can be pinned to the details pane in any channel or"
             " direct message, including group messages, for easy reference."
         )
-        names=["Valentina, Kim, Edu, Pam, Guillaume, Johnny, Steve"]
+        names=["Valentina", "Kim", "Edu", "Pam", "Guillaume", "Johnny", "Steve"]
         for i in names:
-            text = text + "\n " + i
+            text = text + f"\n {i}"
         information = (
             ":information_source: *<https://get.slack.help/hc/en-us/articles/205239997-Pinning-messages-and-files"
             "|Learn How to Pin a Message>*"
