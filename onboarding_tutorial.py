@@ -13,6 +13,30 @@ class OnboardingTutorial:
     }
     DIVIDER_BLOCK = {"type": "divider"}
 
+    INTRO_DUES = {
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "These are the cases that need Retrospectives and/or AARs in Heroku SRE:"
+			}
+		}
+    
+    RETROS_DUE = {
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*These cases need Retros:*\n• 2080 - Heroku - Data Dashboard Issues - (Sev2) \n • 2046 - Heroku - Data Service Administration Latency - (Sev2) \n • 2081 - Heroku - Heroku API, Dyno, Nuild, and Logging Issues - (Sev0)"
+			}
+		}
+    
+    AARS_DUE = {
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*These cases need AARs:*\n*No AARs due! Congrats!* :tada:"
+			}
+		}
+
     def __init__(self, channel):
         self.channel = channel
         self.username = "pythonboardingbot"
@@ -28,7 +52,11 @@ class OnboardingTutorial:
             "username": self.username,
             "icon_emoji": self.icon_emoji,
             "blocks": [
-                self.WELCOME_BLOCK,
+                self.INTRO_DUES,
+                self.DIVIDER_BLOCK,
+                self.RETROS_DUE,
+                self.DIVIDER_BLOCK,
+                self.AARS_DUE,
                 self.DIVIDER_BLOCK,
                 *self._get_reaction_block(),
                 self.DIVIDER_BLOCK,

@@ -26,7 +26,7 @@ slack_web_client = WebClient(token=os.environ['SLACK_BOT_TOKEN'])
 #     assert e.response["error"]  # str like 'invalid_auth', 'channel_not_found'
 #     print(f"Got an error: {e.response['error']}")
 
-print("St least I started")
+print("At least I started")
 onboarding_tutorials_sent = {}
 
 def start_onboarding(user_id: str, channel: str):
